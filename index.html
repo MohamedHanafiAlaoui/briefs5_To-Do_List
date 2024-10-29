@@ -36,7 +36,7 @@
 
   <section class=" container mt-2 bg-info p-3 ">
     <div class="d-flex justify-content-around flex-wrap  " style="gap: 10px;">
-      <div class="card">
+      <div class="card" style="width: 18rem;">
         <div class="card-header" >
           To do <span class="badge bg-secondary">0</span>
         </div>
@@ -45,7 +45,7 @@
         </div>
 
       </div>
-      <div class="card">
+      <div class="card" style="width: 18rem;">
         <div class="card-header">
           In progress <span class="badge bg-secondary">10</span>
         </div>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card" style="width: 18rem;">
         <div class="card-header">
           Done <span class="badge bg-secondary">3</span>
         </div>
@@ -101,8 +101,58 @@
           </div>
         </div>
       </div>
-
     </div>
+  </section>
+
+  <section class="Active w-50 mt-2  p-3 position-absolute top-50 start-50 translate-middle  bg-secondary">
+    <form class="row g-3 needs-validation " novalidate>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Ajouter une carte</label>
+        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">date de debut</label>
+        <input type="date" class="form-control" id="validationCustom01" value="Mark" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">date limite</label>
+        <input type="date" class="form-control" id="validationCustom01" value="Mark" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"> Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">priority</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option value="P0">P0</option>
+          <option  value="P1">P1</option>
+          <option  value="P2">P2</option>
+         
+        
+        </select>
+
+      </div>
+
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">list</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option value="TODO">TDDO</option>
+          <option value="INPROGRESS">INPROGRESS</option>
+          <option value="DONE">DONE</option>
+         
+        
+        </select>
+
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">save</button>
+      </div>
+    </form>
   </section>
 
 </body>
