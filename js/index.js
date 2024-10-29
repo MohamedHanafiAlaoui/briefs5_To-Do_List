@@ -39,4 +39,4 @@ function afech() {
 
 
 
-afech()
+// afech()
