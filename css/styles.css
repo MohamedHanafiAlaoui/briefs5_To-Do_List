@@ -1,24 +1,27 @@
 
 .leftr
 {
-    border-left: 8px solid  #dc3545 !important;
+    border: rgb(253,13,110) 1px solid !important;
+    border-left: 8px solid  rgb(253,13,110) !important;
     border-radius: 8px;
 }
 
 .leftj
 {
-    border-left: 8px solid #ffc107  !important;
+    border: rgb(253,156,13) 1px solid !important;
+    border-left: 8px solid rgb(253,156,13)  !important;
     border-radius: 8px;
 
 }
 
 .leftg
 {
-    border-left: 8px solid  #198754 !important;
+    border: rgb(13,253,156) 1px solid !important;
+    border-left: 8px solid  rgb(13,253,156) !important;
     border-radius: 8px;
 
 }
-.Active
+#Active
 {
     display: none;
 }

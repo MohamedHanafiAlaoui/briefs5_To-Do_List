@@ -13,15 +13,15 @@
 
 </head>
 
-<body>
+<body style="background-color: #070d4c;">
   <!--create sction top html css bosstrabe ,tew bottom and input -->
-  <section class=" container mt-2 bg-info p-3 ">
+  <section class=" container mt-2  p-3 " >
     <div class="d-flex justify-content-around flex-wrap  " style="gap: 10px;">
       <div>
         <input type="text" class="form-control " id="formGroupExampleInput" placeholder="search ...">
       </div>
       <div>
-        <button type="button" class="btn btn-primary">add Task +</button>
+        <button type="button" class="btn btn-primary" id="Task" >add Task +</button>
 
       </div>
       <div>
@@ -34,101 +34,61 @@
     </div>
   </section>
 
-  <section class=" container mt-2 bg-info p-3 ">
+  <section class=" container mt-2  p-3 " >
     <div class="d-flex justify-content-around flex-wrap  " style="gap: 10px;">
-      <div class="card" style="width: 18rem;">
+      <div class="card overflow-auto" style="width: 18rem ;min-height: 50px; max-height: 400px;">
         <div class="card-header" >
           To do <span class="badge bg-secondary">0</span>
         </div>
-        <div id="todo">
+        <div class="card overflow-auto bg-transparent" id="todo">
 
         </div>
 
       </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
+      <div class="card  " style="width: 18rem; min-height:  50px; max-height: 400px">
+        <div class="card-header "  >
           In progress <span class="badge bg-secondary">10</span>
         </div>
-        <div>
-          <div class="card-body border border-3  border-danger  leftr m-2 ">
-            <h5 class="card-title">Brief Soutenances Croisées</h5>
-            <div>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-          </div>
-          <div class="card-body border border-3 border-warning leftj  m-2 ">
-            <h5 class="card-title">Brief Soutenances Croisées</h5>
-            <div>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-          </div>
-          <div class="card-body border border-3 border-success leftg m-2 ">
-            <h5 class="card-title">Brief Soutenances Croisées</h5>
-            <div>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-          </div>
+        <div class="card overflow-auto bg-transparent" id="progress">
+
         </div>
       </div>
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem; min-height: 100px; max-height: 400px">
         <div class="card-header">
           Done <span class="badge bg-secondary">3</span>
         </div>
-        <div>
-          <div class="card-body border border-3  border-danger  leftr m-2 ">
-            <h5 class="card-title">Brief Soutenances Croisées</h5>
-            <div>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-          </div>
-          <div class="card-body border border-3 border-warning leftj  m-2 ">
-            <h5 class="card-title">Brief Soutenances Croisées</h5>
-            <div>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-          </div>
-          <div class="card-body border border-3 border-success leftg m-2 ">
-            <h5 class="card-title">Brief Soutenances Croisées</h5>
-            <div>
-              <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-            </div>
-          </div>
+        <div class="card overflow-auto bg-transparent" id="Done">
+
         </div>
       </div>
     </div>
   </section>
 
-  <section class="Active w-50 mt-2  p-3 position-absolute top-50 start-50 translate-middle  bg-secondary">
+  <section id="Active" class=" w-50 mt-2  p-3 position-absolute top-50 start-50 translate-middle  bg-secondary">
     <form class="row g-3 needs-validation " novalidate>
       <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Ajouter une carte</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+        <input type="text" class="form-control" id="Ajouter_title" required>
       </div>
       <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">date de debut</label>
-        <input type="date" class="form-control" id="validationCustom01" value="Mark" required>
+        <label for="date_debut" class="form-label">date de debut</label>
+        <input type="date" class="form-control" id="date_debut" required>
       </div>
       <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">date limite</label>
-        <input type="date" class="form-control" id="validationCustom01" value="Mark" required>
+        <label for="date_limite" class="form-label">date limite</label>
+        <input type="date" class="form-control" id="date_limite"  required>
       </div>
 
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"> Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="Descriptions" class="form-label"> Description</label>
+        <textarea class="form-control" id="Descriptions" rows="3"></textarea>
       </div>
 
       </div>
       <div class="col-md-3">
-        <label for="validationCustom04" class="form-label">priority</label>
-        <select class="form-select" id="validationCustom04" required>
-          <option value="P0">P0</option>
+        <label for="Priority" class="form-label">priority</label>
+        <select class="form-select" id="Priority" required>
+          <option value="P0" class="bg-danger">P0</option>
           <option  value="P1">P1</option>
           <option  value="P2">P2</option>
          
@@ -138,9 +98,9 @@
       </div>
 
       <div class="col-md-3">
-        <label for="validationCustom04" class="form-label">list</label>
-        <select class="form-select" id="validationCustom04" required>
-          <option value="TODO">TDDO</option>
+        <label for="LIST" class="form-label">list</label>
+        <select class="form-select" id="LIST" required>
+          <option value="TODO">TODO</option>
           <option value="INPROGRESS">INPROGRESS</option>
           <option value="DONE">DONE</option>
          
@@ -150,7 +110,7 @@
       </div>
 
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">save</button>
+        <button class="btn btn-primary" type="submit" id="save">save</button>
       </div>
     </form>
   </section>
