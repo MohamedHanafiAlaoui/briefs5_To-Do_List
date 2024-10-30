@@ -121,7 +121,45 @@ function affche() {
                   }
 
         } 
+        else {
+            
+            if (priority[i] === 'P2') {
 
+                Done.innerHTML  +=`
+              <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
+                  <h5 class="card-title">${Ajouter[i]}</h5>
+                  <div>
+                    <button type="button" class="btn btn-primary">Edit</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </div>
+              </div>
+                          `
+                  }
+                  else if (priority[i] === 'P1') {
+                      
+                      Done.innerHTML +=`
+                     <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
+                          <h5 class="card-title">${Ajouter[i]}</h5>
+                          <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                          </div>
+                      </div>
+                                  `
+                  }
+                  else {
+                      Done.innerHTML  +=`
+                      <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
+                          <h5 class="card-title">${Ajouter[i]}</h5>
+                          <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                          </div>
+                      </div>
+                                  `
+                  }
+                        
+        }
 
     }
 }
