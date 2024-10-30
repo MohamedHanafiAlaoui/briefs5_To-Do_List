@@ -57,6 +57,70 @@ function affche() {
         </div>
                     `
             }
+            else if (priority[i] === 'P1') {
+                
+                todo.innerHTML +=`
+               <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
+                    <h5 class="card-title">${Ajouter[i]}</h5>
+                    <div>
+                      <button type="button" class="btn btn-primary">Edit</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+                            `
+            }
+            else {
+                todo.innerHTML  +=`
+                <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
+                    <h5 class="card-title">${Ajouter[i]}</h5>
+                    <div>
+                      <button type="button" class="btn btn-primary">Edit</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+                            `
+            }
+
+        } 
+        else if (list[i] === "INPROGRESS") {
+
+            if (priority[i] === 'P2') {
+
+                progress.innerHTML  +=`
+              <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
+                  <h5 class="card-title">${Ajouter[i]}</h5>
+                  <div>
+                    <button type="button" class="btn btn-primary">Edit</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                  </div>
+              </div>
+                          `
+                  }
+                  else if (priority[i] === 'P1') {
+                      
+                    progress.innerHTML +=`
+                     <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
+                          <h5 class="card-title">${Ajouter[i]}</h5>
+                          <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                          </div>
+                      </div>
+                                  `
+                  }
+                  else {
+                    progress.innerHTML  +=`
+                      <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
+                          <h5 class="card-title">${Ajouter[i]}</h5>
+                          <div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                          </div>
+                      </div>
+                                  `
+                  }
+
+        } 
 
 
     }
@@ -78,7 +142,7 @@ document.getElementById("Task").addEventListener('click', function () {
 
 
 function Delete() {
-
+    
 }
 
 
