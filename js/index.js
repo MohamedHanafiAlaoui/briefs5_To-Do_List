@@ -41,6 +41,8 @@ document.getElementById("save").addEventListener("click", function (e) {
 function affche() {
     
     todo.innerHTML = ''
+    progress.innerHTML = ''
+    Done.innerHTML = ''
     for (let i = 0; i < Ajouter.length; i++) {
 
         if (list[i] === 'TODO') {
@@ -52,7 +54,7 @@ function affche() {
             <h5 class="card-title">${Ajouter[i]}</h5>
             <div>
               <button type="button" class="btn btn-primary">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
             </div>
         </div>
                     `
@@ -64,7 +66,7 @@ function affche() {
                     <h5 class="card-title">${Ajouter[i]}</h5>
                     <div>
                       <button type="button" class="btn btn-primary">Edit</button>
-                      <button type="button" class="btn btn-danger">Delete</button>
+                      <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                     </div>
                 </div>
                             `
@@ -75,7 +77,7 @@ function affche() {
                     <h5 class="card-title">${Ajouter[i]}</h5>
                     <div>
                       <button type="button" class="btn btn-primary">Edit</button>
-                      <button type="button" class="btn btn-danger">Delete</button>
+                      <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                     </div>
                 </div>
                             `
@@ -91,7 +93,7 @@ function affche() {
                   <h5 class="card-title">${Ajouter[i]}</h5>
                   <div>
                     <button type="button" class="btn btn-primary">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-danger" onclick="Delete(${i})">Delete</button>
                   </div>
               </div>
                           `
@@ -103,7 +105,7 @@ function affche() {
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger" onclick="Delete(${i})">Delete</button>
                           </div>
                       </div>
                                   `
@@ -114,7 +116,7 @@ function affche() {
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                           </div>
                       </div>
                                   `
@@ -130,7 +132,7 @@ function affche() {
                   <h5 class="card-title">${Ajouter[i]}</h5>
                   <div>
                     <button type="button" class="btn btn-primary">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-danger " onclick ="Delete(${i})">Delete</button>
                   </div>
               </div>
                           `
@@ -142,7 +144,7 @@ function affche() {
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                           </div>
                       </div>
                                   `
@@ -153,7 +155,7 @@ function affche() {
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                           </div>
                       </div>
                                   `
@@ -175,13 +177,25 @@ document.getElementById("Task").addEventListener('click', function () {
     else {
         Active.style.display = 'none';
         x = 0
+        
     }
 });
 
 
-function Delete() {
+function Delete(N) {
+    Ajouter.splice(N,1)
+    Description.splice(N,1)
+    priority.splice(N,1)
+    date_debut.splice(N,1)
+    date_limite.splice(N,1)
+    list.splice(N,1)
+    affche()
     
 }
+
+
+
+
 
 
 
