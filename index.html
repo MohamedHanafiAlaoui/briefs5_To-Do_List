@@ -38,7 +38,7 @@
     <div class="d-flex justify-content-around flex-wrap  " style="gap: 10px;">
       <div class="card overflow-auto" style="width: 18rem ;min-height: 50px; max-height: 400px;">
         <div class="card-header" >
-          To do <span class="badge bg-secondary">0</span>
+          To do <span class="badge bg-secondary" id = "contetode">0</span>
         </div>
         <div class="card overflow-auto bg-transparent" id="todo">
 
@@ -47,7 +47,7 @@
       </div>
       <div class="card  " style="width: 18rem; min-height:  50px; max-height: 400px">
         <div class="card-header "  >
-          In progress <span class="badge bg-secondary">10</span>
+          In progress <span class="badge bg-secondary">0</span>
         </div>
         <div class="card overflow-auto bg-transparent" id="progress">
 
@@ -55,7 +55,7 @@
       </div>
       <div class="card" style="width: 18rem; min-height: 100px; max-height: 400px">
         <div class="card-header">
-          Done <span class="badge bg-secondary">3</span>
+          Done <span class="badge bg-secondary">0</span>
         </div>
         <div class="card overflow-auto bg-transparent" id="Done">
 
@@ -109,8 +109,11 @@
 
       </div>
 
-      <div class="col-12">
+      <div class="d-flex " style="gap: 10px;">
         <button class="btn btn-primary"  type="submit" id="save">save</button>
+        <button class="btn btn-primary"  type="submit" id="savedt">save</button>
+        <button class="btn btn-primary"  type="submit" id="fermer">fermer</button>
+
       </div>
     </form>
   </section>

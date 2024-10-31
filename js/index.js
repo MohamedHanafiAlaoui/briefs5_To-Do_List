@@ -7,6 +7,8 @@ let date__limite = document.getElementById("date_limite")
 let Priority = document.getElementById("Priority")
 let LIST = document.getElementById("LIST")
 let Descriptions = document.getElementById("Descriptions")
+let savedt = document.getElementById("savedt")
+let save = document.getElementById("save")
 let x = 0
 let Ajouter = []
 let Description = []
@@ -16,7 +18,7 @@ let date_limite = []
 let list = []
 let colors = ["leftg", "leftj", "leftr"]
 
-document.getElementById("save").addEventListener("click", function (e) {
+save.addEventListener("click", function (e) {
     e.preventDefault()
 
     if (Ajouter_title.value !== '' && date__debut.value !== "") {
@@ -28,7 +30,7 @@ document.getElementById("save").addEventListener("click", function (e) {
         list[list.length] = LIST.value;
     }
     else {
-        alert("ecrire titele")
+        alert("ecrire titele et date debut")
     }
 
 
@@ -43,9 +45,19 @@ function affche() {
     todo.innerHTML = ''
     progress.innerHTML = ''
     Done.innerHTML = ''
+    let to_do = 0
+    let done_do = 0
+    let INPROGRESS_do = 0
+
     for (let i = 0; i < Ajouter.length; i++) {
 
+
+    
+      console.log(to_do);
+      
         if (list[i] === 'TODO') {
+          to_do++
+      document.getElementById("contetode").textContent = to_do
 
             if (priority[i] === 'P2') {
 
@@ -53,7 +65,7 @@ function affche() {
         <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
             <h5 class="card-title">${Ajouter[i]}</h5>
             <div>
-              <button type="button" class="btn btn-primary">Edit</button>
+              <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
               <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
             </div>
         </div>
@@ -65,18 +77,20 @@ function affche() {
                <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
                     <h5 class="card-title">${Ajouter[i]}</h5>
                     <div>
-                      <button type="button" class="btn btn-primary">Edit</button>
+                      <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
                       <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                     </div>
                 </div>
                             `
             }
             else {
+
+
                 todo.innerHTML  +=`
                 <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
                     <h5 class="card-title">${Ajouter[i]}</h5>
                     <div>
-                      <button type="button" class="btn btn-primary">Edit</button>
+                      <button type="button" class="btn btn-primary " onclick="Edit(${i})">Edit</button>
                       <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                     </div>
                 </div>
@@ -92,7 +106,7 @@ function affche() {
               <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
                   <h5 class="card-title">${Ajouter[i]}</h5>
                   <div>
-                    <button type="button" class="btn btn-primary">Edit</button>
+                    <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
                     <button type="button" class="btn btn-danger" onclick="Delete(${i})">Delete</button>
                   </div>
               </div>
@@ -104,7 +118,7 @@ function affche() {
                      <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
                             <button type="button" class="btn btn-danger" onclick="Delete(${i})">Delete</button>
                           </div>
                       </div>
@@ -115,7 +129,7 @@ function affche() {
                       <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
                             <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                           </div>
                       </div>
@@ -166,20 +180,19 @@ function affche() {
     }
 }
 
-// afiche de parti
-document.getElementById("Task").addEventListener('click', function () {
-    let Active = document.getElementById("Active");
-    if (x === 0) {
-        Active.style.display = "flex";
-        x = 1
 
-    }
-    else {
-        Active.style.display = 'none';
-        x = 0
-        
-    }
+document.getElementById("Task").addEventListener('click', function () {
+
+        Active.style.display = "flex";
 });
+document.getElementById("fermer").addEventListener('click', function (e) {
+  e.preventDefault()
+    let Active = document.getElementById("Active");
+
+        Active.style.display = 'none';
+
+});
+
 
 
 function Delete(N) {
@@ -193,6 +206,49 @@ function Delete(N) {
     
 }
 
+
+
+// function Edit(N) {
+//     let Active = document.getElementById("Active");
+//         Active.style.display = "flex";
+//         savedt.style.display = "flex";
+//         save.style.display = "none";
+        
+//         Ajouter_title.value = Ajouter[N]
+//         Descriptions.value =Description[N];
+//         Priority.value = priority[N];
+//        date__debut.value = date_debut[N];
+//        date__limite.value =date_limite[N];
+//        LIST.value = list[N];
+
+//        savedt.addEventListener("click", function (e) {
+//         e.preventDefault()
+    
+//         if (Ajouter_title.value !== '' && date__debut.value !== "") {
+//             Ajouter[N] = Ajouter_title.value;
+//             Description[N] = Descriptions.value;
+//             priority[N] = Priority.value;
+//             date_debut[N] = date__debut.value;
+//             date_limite[N] = date__limite.value;
+//             list[N] = LIST.value;
+
+
+//         Active.style.display = "none";
+//         savedt.style.display = "none";
+//         save.style.display = "flex";
+
+//         }
+//         else {
+//             alert("ecrire titele et date debut")
+//         }
+    
+    
+        
+//         affche()
+    
+    
+//     })
+// }
 
 
 
