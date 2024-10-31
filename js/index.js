@@ -21,7 +21,7 @@ let colors = ["leftg", "leftj", "leftr"]
 save.addEventListener("click", function (e) {
     e.preventDefault()
 
-    if (Ajouter_title.value !== '' && date__debut.value !== "") {
+    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__debut.value.trim() != "") {
         Ajouter[Ajouter.length] = Ajouter_title.value;
         Description[Description.length] = Descriptions.value;
         priority[priority.length] = Priority.value;
