@@ -16,7 +16,7 @@ let priority = []
 let date_debut = []
 let date_limite = []
 let list = []
-let colors = ["leftg", "leftj", "leftr"]
+let colors = ["leftr", "leftj", "leftg"]
 let to_do 
 let done_do 
 let INPROGRESS_do 
