@@ -17,9 +17,9 @@ let date_debut = []
 let date_limite = []
 let list = []
 let colors = ["leftg", "leftj", "leftr"]
-let to_do = 0
-let done_do = 0
-let INPROGRESS_do = 0
+let to_do 
+let done_do 
+let INPROGRESS_do 
 
 save.addEventListener("click", function (e) {
     e.preventDefault()
@@ -163,7 +163,7 @@ function affche() {
                                   `
                   }
                   else {
-                    done_do++
+                    
                       Done.innerHTML  +=`
                       <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
                           <h5 class="card-title">${Ajouter[i]}</h5>
