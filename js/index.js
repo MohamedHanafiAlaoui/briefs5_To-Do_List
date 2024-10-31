@@ -49,12 +49,12 @@ function affche() {
     progress.innerHTML = ''
     Done.innerHTML = ''
     to_do = 0
-
+    INPROGRESS_do=0
+    done_do=0
     for (let i = 0; i < Ajouter.length; i++) {
 
         
       
-      console.log(to_do);
       
         if (list[i] === 'TODO') {
           to_do++
@@ -98,7 +98,7 @@ function affche() {
 
         } 
         else if (list[i] === "INPROGRESS") {
-
+          INPROGRESS_do++
             if (priority[i] === 'P2') {
 
                 progress.innerHTML  +=`
@@ -137,7 +137,7 @@ function affche() {
 
         } 
         else {
-            
+          done_do++
             if (priority[i] === 'P2') {
 
                 Done.innerHTML  +=`
@@ -163,6 +163,7 @@ function affche() {
                                   `
                   }
                   else {
+                    done_do++
                       Done.innerHTML  +=`
                       <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
                           <h5 class="card-title">${Ajouter[i]}</h5>
@@ -179,6 +180,8 @@ function affche() {
     }
 
     document.getElementById("contetode").textContent = to_do
+    document.getElementById("conteprogress").textContent = INPROGRESS_do
+    document.getElementById("conteDone").textContent = done_do
 
 }
 
