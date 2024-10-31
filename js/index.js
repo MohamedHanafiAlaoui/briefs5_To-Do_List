@@ -51,7 +51,7 @@ function affche() {
 
     for (let i = 0; i < Ajouter.length; i++) {
 
-
+      
     
       console.log(to_do);
       
@@ -208,47 +208,42 @@ function Delete(N) {
 
 
 
-// function Edit(N) {
-//     let Active = document.getElementById("Active");
-//         Active.style.display = "flex";
-//         savedt.style.display = "flex";
-//         save.style.display = "none";
+function Edit(N) {
+    let Active = document.getElementById("Active");
+        Active.style.display = "flex";
+        savedt.style.display = "flex";
+        save.style.display = "none";
         
-//         Ajouter_title.value = Ajouter[N]
-//         Descriptions.value =Description[N];
-//         Priority.value = priority[N];
-//        date__debut.value = date_debut[N];
-//        date__limite.value =date_limite[N];
-//        LIST.value = list[N];
+        Ajouter_title.value = Ajouter[N]
+        Descriptions.value =Description[N];
+        Priority.value = priority[N];
+       date__debut.value = date_debut[N];
+       date__limite.value =date_limite[N];
+       LIST.value = list[N];
 
-//        savedt.addEventListener("click", function (e) {
-//         e.preventDefault()
+       savedt.addEventListener("click", function (e) {
+        e.preventDefault()
     
-//         if (Ajouter_title.value !== '' && date__debut.value !== "") {
-//             Ajouter[N] = Ajouter_title.value;
-//             Description[N] = Descriptions.value;
-//             priority[N] = Priority.value;
-//             date_debut[N] = date__debut.value;
-//             date_limite[N] = date__limite.value;
-//             list[N] = LIST.value;
+        if (Ajouter_title.value !== '' && date__debut.value !== "") {
+            Ajouter[N] = Ajouter_title.value;
+            Description[N] = Descriptions.value;
+            priority[N] = Priority.value;
+            date_debut[N] = date__debut.value;
+            date_limite[N] = date__limite.value;
+            list[N] = LIST.value;
 
 
-//         Active.style.display = "none";
-//         savedt.style.display = "none";
-//         save.style.display = "flex";
+        Active.style.display = "none";
+        savedt.style.display = "none";
+        save.style.display = "flex";
 
-//         }
-//         else {
-//             alert("ecrire titele et date debut")
-//         }
-    
-    
-        
-//         affche()
-    
-    
-//     })
-// }
+        }
+        else {
+            alert("ecrire titele et date debut")
+        }  
+        affche()
+    })
+}
 
 
 
