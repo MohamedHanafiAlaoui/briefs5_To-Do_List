@@ -17,6 +17,9 @@ let date_debut = []
 let date_limite = []
 let list = []
 let colors = ["leftg", "leftj", "leftr"]
+let to_do = 0
+let done_do = 0
+let INPROGRESS_do = 0
 
 save.addEventListener("click", function (e) {
     e.preventDefault()
@@ -45,20 +48,16 @@ function affche() {
     todo.innerHTML = ''
     progress.innerHTML = ''
     Done.innerHTML = ''
-    let to_do = 0
-    let done_do = 0
-    let INPROGRESS_do = 0
+    to_do = 0
 
     for (let i = 0; i < Ajouter.length; i++) {
 
+        
       
-    
       console.log(to_do);
       
         if (list[i] === 'TODO') {
           to_do++
-      document.getElementById("contetode").textContent = to_do
-
             if (priority[i] === 'P2') {
 
           todo.innerHTML  +=`
@@ -178,6 +177,9 @@ function affche() {
         }
 
     }
+
+    document.getElementById("contetode").textContent = to_do
+
 }
 
 
