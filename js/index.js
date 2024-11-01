@@ -21,6 +21,8 @@ let to_do
 let done_do 
 let INPROGRESS_do 
 
+console.log(colors.length);
+
 save.addEventListener("click", function (e) {
     e.preventDefault()
 
@@ -31,9 +33,17 @@ save.addEventListener("click", function (e) {
         date_debut[date_debut.length] = date__debut.value;
         date_limite[date_limite.length] = date__limite.value;
         list[list.length] = LIST.value;
+
+
+      
+
+        let Active = document.getElementById("Active");
+        
+         Active.style.display = 'none';
+
     }
     else {
-        alert("ecrire titele et date debut")
+        
     }
 
 
@@ -43,8 +53,13 @@ save.addEventListener("click", function (e) {
 
 })
 
+
+
 function affche() {
-    
+  Ajouter_title.value = '';
+  Descriptions.value = '';
+ date__debut.value = '';
+ date__limite.value = '';
     todo.innerHTML = ''
     progress.innerHTML = ''
     Done.innerHTML = ''
@@ -59,10 +74,10 @@ function affche() {
         if (list[i] === 'TODO') {
           to_do++
             if (priority[i] === 'P2') {
-
+              
           todo.innerHTML  +=`
         <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
-            <h5 class="card-title">${Ajouter[i]}</h5>
+            <h5 class="card-title">${(Ajouter[i])}</h5>
             <div>
               <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
               <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
@@ -144,7 +159,7 @@ function affche() {
               <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
                   <h5 class="card-title">${Ajouter[i]}</h5>
                   <div>
-                    <button type="button" class="btn btn-primary">Edit</button>
+                    <button type="button" class="btn btn-primary"  onclick="Edit(${i})">Edit</button>
                     <button type="button" class="btn btn-danger " onclick ="Delete(${i})">Delete</button>
                   </div>
               </div>
@@ -156,7 +171,7 @@ function affche() {
                      <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-primary"  onclick="Edit(${i})">Edit</button>
                             <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                           </div>
                       </div>
@@ -168,7 +183,7 @@ function affche() {
                       <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
-                            <button type="button" class="btn btn-primary">Edit</button>
+                            <button type="button" class="btn btn-primary"  onclick="Edit(${i})">Edit</button>
                             <button type="button" class="btn btn-danger" onclick ="Delete(${i})">Delete</button>
                           </div>
                       </div>
@@ -229,7 +244,7 @@ function Edit(N) {
        savedt.addEventListener("click", function (e) {
         e.preventDefault()
     
-        if (Ajouter_title.value !== '' && date__debut.value !== "") {
+        if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__debut.value.trim() != "") {
             Ajouter[N] = Ajouter_title.value;
             Description[N] = Descriptions.value;
             priority[N] = Priority.value;
@@ -237,16 +252,17 @@ function Edit(N) {
             date_limite[N] = date__limite.value;
             list[N] = LIST.value;
 
-
         Active.style.display = "none";
         savedt.style.display = "none";
         save.style.display = "flex";
 
         }
         else {
-            alert("ecrire titele et date debut")
+          document.querySelector("input").style.color ="red"
         }  
         affche()
+
+
     })
 }
 

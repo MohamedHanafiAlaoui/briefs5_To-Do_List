@@ -13,7 +13,7 @@
 
 </head>
 
-<body style="background-color: #070d4c;">
+<body style="background-color: #070d4c; " class="d-flex flex-column justify-content-center align-items-center" >
   <!--create sction top html css bosstrabe ,tew bottom and input -->
   <section class=" container mt-2  p-3 " >
     <div class="d-flex justify-content-around flex-wrap  " style="gap: 10px;">
@@ -34,37 +34,8 @@
     </div>
   </section>
 
-  <section class=" container mt-2  p-3 " >
-    <div class="d-flex justify-content-around flex-wrap  " style="gap: 10px;">
-      <div class="card overflow-auto" style="width: 18rem ;min-height: 50px; max-height: 400px;">
-        <div class="card-header" >
-          To do <span class="badge bg-secondary" id = "contetode">0</span>
-        </div>
-        <div class="card overflow-auto bg-transparent" id="todo">
-
-        </div>
-
-      </div>
-      <div class="card  " style="width: 18rem; min-height:  50px; max-height: 400px">
-        <div class="card-header "  >
-          In progress <span class="badge bg-secondary" id="conteprogress">0</span>
-        </div>
-        <div class="card overflow-auto bg-transparent" id="progress">
-
-        </div>
-      </div>
-      <div class="card" style="width: 18rem; min-height: 100px; max-height: 400px">
-        <div class="card-header">
-          Done <span class="badge bg-secondary" id="conteDone">0</span>
-        </div>
-        <div class="card overflow-auto bg-transparent" id="Done">
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="Active" class="  mt-2  p-3 position-absolute start-50 translate-middle text-white border border-3 rounded border-primary " style="background-color: #070d4c;">
+  
+  <section id="Active" class="  mt-2  p-3  text-white border border-3 rounded border-primary " style="background-color: #070d4c;">
     <form class="row g-3 needs-validation " novalidate>
       <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Ajouter une carte</label>
@@ -111,13 +82,46 @@
 
       <div class="d-flex " style="gap: 10px;">
         <button class="btn btn-primary"  type="submit" id="save">save</button>
-        <button class="btn btn-primary"  type="submit" id="savedt">save</button>
+        <button class="btn btn-primary"  type="submit" id="savedt">edit</button>
         <button class="btn btn-primary"  type="submit" id="fermer">fermer</button>
 
       </div>
     </form>
   </section>
 
+
+  <section class=" container mt-2  p-3 " >
+    <div class="d-flex justify-content-around flex-wrap  " style="gap: 10px;">
+      <div class="card overflow-auto" style="width: 18rem ;min-height: 50px; max-height: 400px;">
+        <div class="card-header" >
+          To do <span class="badge bg-secondary" id = "contetode">0</span>
+        </div>
+        <div class="card overflow-auto bg-transparent" id="todo">
+
+        </div>
+
+      </div>
+      <div class="card  " style="width: 18rem; min-height:  50px; max-height: 400px">
+        <div class="card-header "  >
+          In progress <span class="badge bg-secondary" id="conteprogress">0</span>
+        </div>
+        <div class="card overflow-auto bg-transparent" id="progress">
+
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; min-height: 100px; max-height: 400px">
+        <div class="card-header">
+          Done <span class="badge bg-secondary" id="conteDone">0</span>
+        </div>
+        <div class="card overflow-auto bg-transparent" id="Done">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    
 </body>
   <script src="./js/index.js"></script>
 </html>
