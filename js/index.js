@@ -9,6 +9,10 @@ let LIST = document.getElementById("LIST")
 let Descriptions = document.getElementById("Descriptions")
 let savedt = document.getElementById("savedt")
 let save = document.getElementById("save")
+let  Titletext = document.getElementById("Title")
+let date = document.getElementById("date")
+let datefin = document.getElementById("datefin")
+let Descr = document.getElementById("Descr")
 let x = 0
 let Ajouter = []
 let Description = []
@@ -21,32 +25,65 @@ let to_do
 let done_do 
 let INPROGRESS_do 
 
-console.log(colors.length);
+
 
 save.addEventListener("click", function (e) {
     e.preventDefault()
 
-    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__debut.value.trim() != "") {
+    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__debut.value.trim() != "") 
+      {
         Ajouter[Ajouter.length] = Ajouter_title.value;
         Description[Description.length] = Descriptions.value;
         priority[priority.length] = Priority.value;
         date_debut[date_debut.length] = date__debut.value;
         date_limite[date_limite.length] = date__limite.value;
         list[list.length] = LIST.value;
-
-
-      
-
-        let Active = document.getElementById("Active");
-        
+        let Active = document.getElementById("Active");     
          Active.style.display = 'none';
-
-    }
-    else {
         
     }
 
-
+    if (Ajouter_title.value.trim() != '' ) 
+      {
+          Titletext.style.display ="none"
+  
+      }else
+      {
+          Titletext.style.display ="flex"
+  
+      }
+  
+      if ( date__debut.value.trim() != "" ) 
+      {
+          date.style.display ="none"
+  
+      }
+      else
+      {
+          date.style.display ="flex"
+  
+      }
+      if (Descriptions.value.trim() != "" ) 
+      {
+          Descr.style.display ="none"
+  
+      }
+      else
+      {
+          Descr.style.display ="flex"
+  
+      }
+  
+      if ( date__debut.value.trim() != "")
+          {
+              datefin.style.display ="none"
+  
+          } 
+          else
+          {
+              datefin.style.display ="flex"
+  
+          }
     
     affche()
 
@@ -56,6 +93,7 @@ save.addEventListener("click", function (e) {
 
 
 function affche() {
+ 
   Ajouter_title.value = '';
   Descriptions.value = '';
  date__debut.value = '';
@@ -67,16 +105,13 @@ function affche() {
     INPROGRESS_do=0
     done_do=0
     for (let i = 0; i < Ajouter.length; i++) {
-
-        
-      
-      
+     
         if (list[i] === 'TODO') {
           to_do++
             if (priority[i] === 'P2') {
               
           todo.innerHTML  +=`
-        <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
+        <div class="card-body border border-3  border-danger  ${colors[2]} m-2 " >
             <h5 class="card-title">${(Ajouter[i])}</h5>
             <div>
               <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
@@ -223,7 +258,6 @@ function Delete(N) {
     date_limite.splice(N,1)
     list.splice(N,1)
     affche()
-    
 }
 
 

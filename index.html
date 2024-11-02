@@ -37,22 +37,34 @@
   
   <section id="Active" class="  mt-2  p-3  text-white border border-3 rounded border-primary " style="background-color: #070d4c;">
     <form class="row g-3 needs-validation " novalidate>
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Ajouter une carte</label>
+      <div class="col-md-4" >
+        <label for="validationCustom01" class="form-label">Title</label>
         <input type="text" class="form-control" id="Ajouter_title" required>
+        <div id="Title" class="text-danger">
+          tapet la Title.
+        </div>
       </div>
       <div class="col-md-4">
         <label for="date_debut" class="form-label">date de debut</label>
-        <input type="date" class="form-control" id="date_debut" required>
+        <input type="date" class="form-control " id="date_debut" required>
+        <div id="date" class="text-danger dective">
+          tapet la date.
+        </div>
       </div>
       <div class="col-md-4">
         <label for="date_limite" class="form-label">date limite</label>
         <input type="date" class="form-control" id="date_limite"  required>
+        <div id="datefin" class="text-danger dective">
+          tapet la date .
+        </div>
       </div>
 
       <div class="mb-3">
         <label for="Descriptions" class="form-label"> Description</label>
         <textarea class="form-control" id="Descriptions" rows="3"></textarea>
+        <div id="Descr" class="text-danger dective">
+          tapet Description
+        </div>
       </div>
 
       </div>
@@ -124,4 +136,5 @@
     
 </body>
   <script src="./js/index.js"></script>
+  <script src="./js/valid.js"></script>
 </html>

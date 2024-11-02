@@ -31,3 +31,27 @@
     display: none;
 
 }
+
+#Title
+{
+    display: none;
+}
+
+#date
+{
+    display: none;
+}
+
+#datefin
+{
+    display: none;
+}
+#Descr
+{
+    display: none;
+}
+
+.drag
+{
+    background-color: orange ;
+}
