@@ -29,7 +29,7 @@ let INPROGRESS_do
 save.addEventListener("click", function (e) {
     e.preventDefault()
 
-    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__limite.value.trim() != "") 
+    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__limite.value.trim() != "" && LIST.value != "") 
       {
         Ajouter[Ajouter.length] = Ajouter_title.value;
         Description[Description.length] = Descriptions.value;
@@ -134,7 +134,7 @@ function affche() {
                 </div>
                             `
             }
-            else {
+            else  if (priority[i] === 'P3'){
 
 
                 todo.innerHTML  +=`
@@ -188,7 +188,7 @@ function affche() {
                   }
 
         } 
-        else {
+        else if (list[i] === "DONE") {
           done_do++
             if (priority[i] === 'P2') {
 

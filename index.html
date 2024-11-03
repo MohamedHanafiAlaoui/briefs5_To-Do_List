@@ -21,11 +21,11 @@
         <input type="text" class="form-control " id="formGroupExampleInput" placeholder="search ...">
       </div>
       <div>
-        <button type="button" class="btn btn-primary" id="Task" >add Task +</button>
+        <button type="submit" class="btn btn-primary" id="Task" >add Task +</button>
 
       </div>
       <div>
-        <button type="button" class="btn btn-primary">Add multiple +</button>
+        <button type="submit" class="btn btn-primary">Add multiple +</button>
 
       </div>
 
@@ -38,7 +38,7 @@
   <section id="Active" class="  mt-2  p-3  text-white border border-3 rounded border-primary " style="background-color: #070d4c;">
     <form class="row g-3 needs-validation " novalidate>
       <div class="col-md-4" >
-        <label for="validationCustom01" class="form-label">Title</label>
+        <label for="Ajouter_title" class="form-label">Title</label>
         <input type="text" class="form-control" id="Ajouter_title" required>
         <div id="Title" class="text-danger">
           enter Nom du Titre
@@ -67,10 +67,11 @@
         </div>
       </div>
 
-      </div>
+      
       <div class="col-md-3">
         <label for="Priority" class="form-label">priority</label>
         <select class="form-select" id="Priority" required>
+          <option value="" disabled selected>Choose priority</option>
           <option value="P0" class="bg-danger">P0</option>
           <option  value="P1" class="bg-warning">P1</option>
           <option  value="P2" class="bg-success">P2</option>
@@ -83,6 +84,7 @@
       <div class="col-md-3">
         <label for="LIST" class="form-label">list</label>
         <select class="form-select" id="LIST" required>
+          <option value="" disabled selected>Choose list</option>
           <option value="TODO">TODO</option>
           <option value="INPROGRESS">INPROGRESS</option>
           <option value="DONE">DONE</option>
@@ -132,9 +134,9 @@
     </div>
   </section>
 
-
-    
-</body>
   <script src="./js/index.js"></script>
   <script src="./js/valid.js"></script>
+    
+</body>
+
 </html>
