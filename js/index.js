@@ -12,6 +12,8 @@ let save = document.getElementById("save")
 let  Titletext = document.getElementById("Title")
 let date = document.getElementById("date")
 let datefin = document.getElementById("datefin")
+let prioritss = document.getElementById("prioritss")
+let LISs = document.getElementById("LISs")
 let Descr = document.getElementById("Descr")
 let Ajouter = []
 let Description = []
@@ -28,8 +30,10 @@ let INPROGRESS_do
 
 save.addEventListener("click", function (e) {
     e.preventDefault()
+    console.log(LIST.value);
+    
 
-    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__limite.value.trim() != "" && LIST.value != "") 
+    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__limite.value.trim() != "" ) 
       {
         Ajouter[Ajouter.length] = Ajouter_title.value;
         Description[Description.length] = Descriptions.value;
@@ -40,6 +44,7 @@ save.addEventListener("click", function (e) {
         let Active = document.getElementById("Active");     
          Active.style.display = 'none';
         
+         
     }
 
     if (Ajouter_title.value.trim() != '' ) 
@@ -52,6 +57,7 @@ save.addEventListener("click", function (e) {
   
       }
   
+
       if ( date__debut.value.trim() != "" ) 
       {
           date.style.display ="none"
