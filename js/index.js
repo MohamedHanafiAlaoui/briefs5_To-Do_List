@@ -13,7 +13,6 @@ let  Titletext = document.getElementById("Title")
 let date = document.getElementById("date")
 let datefin = document.getElementById("datefin")
 let Descr = document.getElementById("Descr")
-let x = 0
 let Ajouter = []
 let Description = []
 let priority = []
@@ -30,7 +29,7 @@ let INPROGRESS_do
 save.addEventListener("click", function (e) {
     e.preventDefault()
 
-    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__debut.value.trim() != "") 
+    if (Ajouter_title.value.trim() != '' && date__debut.value.trim() != "" && Descriptions.value.trim() != "" && date__limite.value.trim() != "") 
       {
         Ajouter[Ajouter.length] = Ajouter_title.value;
         Description[Description.length] = Descriptions.value;
@@ -93,14 +92,17 @@ save.addEventListener("click", function (e) {
 
 
 function affche() {
- 
-  Ajouter_title.value = '';
+
+    Ajouter_title.value = '';
   Descriptions.value = '';
  date__debut.value = '';
  date__limite.value = '';
     todo.innerHTML = ''
     progress.innerHTML = ''
     Done.innerHTML = ''
+
+ 
+
     to_do = 0
     INPROGRESS_do=0
     done_do=0
@@ -111,7 +113,7 @@ function affche() {
             if (priority[i] === 'P2') {
               
           todo.innerHTML  +=`
-        <div class="card-body border border-3  border-danger  ${colors[2]} m-2 " >
+        <div class="card-body border border-3  border-danger  chang_list ${colors[2]} m-2 " draggable="true" >
             <h5 class="card-title">${(Ajouter[i])}</h5>
             <div>
               <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
@@ -123,7 +125,7 @@ function affche() {
             else if (priority[i] === 'P1') {
                 
                 todo.innerHTML +=`
-               <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
+               <div class="card-body border border-3  border-danger  chang_list ${colors[1]} m-2 " draggable="true" >
                     <h5 class="card-title">${Ajouter[i]}</h5>
                     <div>
                       <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
@@ -136,7 +138,7 @@ function affche() {
 
 
                 todo.innerHTML  +=`
-                <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
+                <div class="card-body border border-3  border-danger  chang_list ${colors[0]} m-2 " draggable="true" >
                     <h5 class="card-title">${Ajouter[i]}</h5>
                     <div>
                       <button type="button" class="btn btn-primary " onclick="Edit(${i})">Edit</button>
@@ -152,7 +154,7 @@ function affche() {
             if (priority[i] === 'P2') {
 
                 progress.innerHTML  +=`
-              <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
+              <div class="card-body border border-3  border-danger  chang_list ${colors[2]} m-2 " draggable="true" >
                   <h5 class="card-title">${Ajouter[i]}</h5>
                   <div>
                     <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
@@ -164,7 +166,7 @@ function affche() {
                   else if (priority[i] === 'P1') {
                       
                     progress.innerHTML +=`
-                     <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
+                     <div class="card-body border border-3  border-danger  chang_list ${colors[1]} m-2 " draggable="true" >
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
@@ -175,7 +177,7 @@ function affche() {
                   }
                   else {
                     progress.innerHTML  +=`
-                      <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
+                      <div class="card-body border border-3  border-danger  chang_list ${colors[0]} m-2 " draggable="true" >
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary" onclick="Edit(${i})">Edit</button>
@@ -191,7 +193,7 @@ function affche() {
             if (priority[i] === 'P2') {
 
                 Done.innerHTML  +=`
-              <div class="card-body border border-3  border-danger  ${colors[2]} m-2 ">
+              <div class="card-body border border-3  border-danger  chang_list ${colors[2]} m-2 " draggable="true" >
                   <h5 class="card-title">${Ajouter[i]}</h5>
                   <div>
                     <button type="button" class="btn btn-primary"  onclick="Edit(${i})">Edit</button>
@@ -203,7 +205,7 @@ function affche() {
                   else if (priority[i] === 'P1') {
                       
                       Done.innerHTML +=`
-                     <div class="card-body border border-3  border-danger  ${colors[1]} m-2 ">
+                     <div class="card-body border border-3  border-danger  chang_list ${colors[1]} m-2 " draggable="true" >
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary"  onclick="Edit(${i})">Edit</button>
@@ -215,7 +217,7 @@ function affche() {
                   else {
                     
                       Done.innerHTML  +=`
-                      <div class="card-body border border-3  border-danger  ${colors[0]} m-2 ">
+                      <div class="card-body border border-3  border-danger  chang_list ${colors[0]} m-2 " draggable="true" >
                           <h5 class="card-title">${Ajouter[i]}</h5>
                           <div>
                             <button type="button" class="btn btn-primary"  onclick="Edit(${i})">Edit</button>
@@ -257,6 +259,7 @@ function Delete(N) {
     date_debut.splice(N,1)
     date_limite.splice(N,1)
     list.splice(N,1)
+
     affche()
 }
 
@@ -293,7 +296,8 @@ function Edit(N) {
         }
         else {
           document.querySelector("input").style.color ="red"
-        }  
+        } 
+
         affche()
 
 
