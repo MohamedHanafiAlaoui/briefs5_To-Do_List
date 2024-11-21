@@ -43,7 +43,7 @@ save.addEventListener("click", function (e) {
         list[list.length] = LIST.value;
         let Active = document.getElementById("Active");     
          Active.style.display = 'none';
-        
+         affche()
          
     }
 
@@ -90,7 +90,7 @@ save.addEventListener("click", function (e) {
   
           }
     
-    affche()
+ 
 
 
 })
@@ -140,7 +140,7 @@ function affche() {
                 </div>
                             `
             }
-            else  if (priority[i] === 'P3'){
+            else{
 
 
                 todo.innerHTML  +=`
